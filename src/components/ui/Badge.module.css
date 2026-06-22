@@ -1,0 +1,75 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.default {
+  background: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.primary {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.success {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.warning {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.danger {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.info {
+  background: rgba(6, 182, 212, 0.12);
+  color: #0891b2;
+}
+
+/* 数字角标 */
+.countBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  background: var(--color-danger);
+  color: #fff;
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+.countBadge.primary {
+  background: var(--color-primary);
+}
+
+.countBadge.success {
+  background: var(--color-success);
+}
+
+.countBadge.warning {
+  background: var(--color-warning);
+}
+
+.countBadge.default {
+  background: var(--color-text-tertiary);
+}

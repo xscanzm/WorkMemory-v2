@@ -40,6 +40,7 @@ crossbeam-channel = "0.5"
 base64 = "0.22"
 sha2 = "0.10"
 image-compare = "0.4"
+regex = "1"
 
 [target.'cfg(windows)'.dependencies]
 windows = { version = "0.58", features = [

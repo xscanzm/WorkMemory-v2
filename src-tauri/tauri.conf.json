@@ -53,14 +53,25 @@
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
-      "icons/128x128@2x.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
+      "icons/128x128@2x.png"
     ],
     "publisher": "WorkMemory",
     "category": "Productivity",
     "shortDescription": "桌面工作记忆助手",
-    "longDescription": "WorkMemory 是一个住在你桌面上的工作记忆助手——它默默记住你做过的一切，在你需要的时候帮你回忆、整理、输出。"
+    "longDescription": "WorkMemory 是一个住在你桌面上的工作记忆助手——它默默记住你做过的一切，在你需要的时候帮你回忆、整理、输出。",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"],
+        "displayLanguageSelector": false,
+        "headerImage": null,
+        "sidebarImage": null,
+        "installerIcon": null
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
   },
   "plugins": {}
 }

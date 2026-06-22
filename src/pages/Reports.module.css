@@ -1,0 +1,236 @@
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.reportList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.emptyHint {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.dateGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.dateLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  padding: var(--space-xs) var(--space-xs);
+}
+
+.reportItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border-radius: var(--radius-input);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.reportItem:hover {
+  background: var(--color-surface-hover);
+}
+
+.reportItemActive {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+}
+
+.reportIcon {
+  font-size: 14px;
+}
+
+.reportInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.reportName {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reportDate {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+}
+
+.reportDelete {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-tertiary);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+
+.reportItem:hover .reportDelete {
+  opacity: 1;
+}
+
+.reportDelete:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  min-width: 0;
+  overflow-y: auto;
+  padding-right: var(--space-xs);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-sm);
+}
+
+.templateCard {
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.templateCardActive {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-soft);
+}
+
+.templateHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.templateIcon {
+  font-size: 18px;
+}
+
+.templateName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.templateDesc {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.charCount {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  text-align: right;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.editorActions {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.editor {
+  min-height: 240px;
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-input);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  outline: none;
+  white-space: pre-wrap;
+}
+
+.preview {
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  min-height: 240px;
+}
+
+.previewLine {
+  margin: 0;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--color-primary);
+  animation: wm-pulse 1s infinite;
+}

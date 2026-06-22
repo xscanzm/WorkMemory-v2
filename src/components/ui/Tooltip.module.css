@@ -1,0 +1,29 @@
+.content {
+  background: var(--color-text-primary);
+  color: var(--color-surface);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 240px;
+  box-shadow: var(--shadow-standard);
+  z-index: 1600;
+  animation: wm-fade-in 0.15s ease-out;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.arrow {
+  fill: var(--color-text-primary);
+}
+
+@keyframes wm-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -198,7 +198,7 @@ pub fn now_timestamp() -> i64 {
 ///
 /// 将用户输入的每个词用双引号包裹，避免 FTS5 特殊语法（AND/OR/NOT/NEAR/* 等）
 /// 导致查询错误。多个词之间以空格连接，FTS5 默认按 AND 匹配。
-fn escape_fts_query(query: &str) -> String {
+pub fn escape_fts_query(query: &str) -> String {
     query
         .split_whitespace()
         .map(|word| format!("\"{}\"", word.replace('"', "\"\"")))
@@ -998,6 +998,30 @@ impl DbState {
         )
         .map_err(|e| format!("设置 setting 失败: {}", e))?;
         Ok(())
+    }
+
+    /// 执行任意 SQL（写操作），返回受影响行数
+    pub fn execute<P: rusqlite::Params>(&self, sql: &str, params: P) -> Result<usize, String> {
+        let conn = self.write_conn.lock();
+        conn.execute(sql, params)
+            .map_err(|e| format!("执行 SQL 失败: {} | SQL: {}", e, sql))
+    }
+
+    /// 查询单个标量值（如 COUNT(*)）
+    pub fn query_one(&self, sql: &str) -> Result<i64, String> {
+        let conn = self.write_conn.lock();
+        conn.query_row(sql, [], |row| row.get::<_, i64>(0))
+            .map_err(|e| format!("查询失败: {} | SQL: {}", e, sql))
+    }
+
+    /// 准备语句（供复杂查询使用）
+    pub fn prepare<F, T>(&self, sql: &str, f: F) -> Result<T, String>
+    where
+        F: FnOnce(&mut rusqlite::Statement) -> Result<T, rusqlite::Error>,
+    {
+        let conn = self.write_conn.lock();
+        let mut stmt = conn.prepare(sql).map_err(|e| format!("准备语句失败: {}", e))?;
+        f(&mut stmt).map_err(|e| format!("查询失败: {}", e))
     }
 }
 

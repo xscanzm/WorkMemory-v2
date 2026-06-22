@@ -1,0 +1,334 @@
+.container {
+  position: fixed;
+  pointer-events: none;
+}
+
+.mascot {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  pointer-events: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: visible;
+}
+
+.mascot:active {
+  cursor: grabbing;
+}
+
+.emoji {
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* 状态指示器 */
+.indicator {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.indRecording {
+  background: #10b981;
+  animation: wm-pulse 1.5s infinite;
+}
+
+.indReport {
+  background: #f59e0b;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.privacyMask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.scanLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5b6af0, transparent);
+  animation: wm-scan 1.5s linear infinite;
+}
+
+@keyframes wm-scan {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: calc(100% - 2px);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* 气泡 */
+.bubble {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 12px 16px;
+  max-width: 280px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
+  pointer-events: auto;
+  color: #111827;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.bubbleText {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.bubbleActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.bubbleBtn {
+  padding: 4px 12px;
+  background: #5b6af0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.bubbleBtn:hover {
+  background: #4a59d6;
+}
+
+/* 摘要卡片 */
+.summaryCard {
+  min-width: 240px;
+}
+
+.summaryHeader {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.summaryStats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.summaryStat {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryStatValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.summaryStatLabel {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.summaryItem {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.summaryTime {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.summaryTitle {
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summaryBtn {
+  width: 100%;
+  padding: 6px;
+  background: transparent;
+  color: #5b6af0;
+  border: 1px solid #5b6af0;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.summaryBtn:hover {
+  background: #5b6af0;
+  color: #fff;
+}
+
+/* 右键菜单 */
+.contextMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #111827;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.menuItem:hover {
+  background: rgba(91, 106, 240, 0.1);
+  color: #5b6af0;
+}
+
+.menuDivider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 4px 0;
+}
+
+/* 形象选择器 */
+.formPicker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  width: 280px;
+}
+
+.pickerTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.pickerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pickerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pickerItem:hover {
+  background: rgba(91, 106, 240, 0.08);
+}
+
+.pickerItemActive {
+  border-color: #5b6af0;
+  background: rgba(91, 106, 240, 0.12);
+}
+
+.pickerEmoji {
+  font-size: 24px;
+}
+
+.pickerLabel {
+  font-size: 11px;
+  color: #6b7280;
+}

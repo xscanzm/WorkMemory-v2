@@ -1,0 +1,212 @@
+.navActions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-md);
+  min-height: 0;
+}
+
+.calendarCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.monthTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.weekdayRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.weekdayCell {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  padding: var(--space-xs) 0;
+}
+
+.dayGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.dayCell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-xs);
+  border-radius: var(--radius-input);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.dayCellOther {
+  color: var(--color-text-tertiary);
+  opacity: 0.4;
+  cursor: default;
+  background: transparent;
+}
+
+.dayCellCurrent {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.dayCellCurrent:hover {
+  border-color: var(--color-border-strong);
+}
+
+.dayCellToday {
+  border-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.dayCellSelected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-soft);
+}
+
+.dayNumber {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.daySummary {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.dayBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.detailTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.detailStats {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-input);
+  margin-bottom: var(--space-md);
+}
+
+.detailStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detailStatValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.detailStatLabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.episodeList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.episodeItem {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-input);
+}
+
+.episodeTime {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.episodeInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.episodeTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.episodeSummary {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

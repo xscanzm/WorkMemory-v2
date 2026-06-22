@@ -1,0 +1,272 @@
+.loading {
+  padding: var(--space-2xl);
+  text-align: center;
+  color: var(--color-text-tertiary);
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-lg);
+  gap: var(--space-md);
+}
+
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: fit-content;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-input);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.navItem:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.navItemActive {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.navIcon {
+  font-size: 14px;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.sectionDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-md);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.fieldHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fieldLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.fieldHint {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+
+.fieldBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-sm);
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.formCard:hover {
+  border-color: var(--color-border-strong);
+}
+
+.formCardActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  box-shadow: 0 0 0 2px var(--color-primary-soft);
+}
+
+.formEmoji {
+  font-size: 28px;
+}
+
+.formLabel {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 13px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.dndRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.timeInput {
+  width: 100px;
+}
+
+.addRuleRow {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.ruleList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.emptyHint {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.ruleItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-input);
+}
+
+.rulePattern {
+  flex: 1;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.ruleDelete {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-tertiary);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ruleDelete:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.ocrStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.ocrLang {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.statBox {
+  padding: var(--space-md);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-input);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.dataActions {
+  display: flex;
+  gap: var(--space-sm);
+}

@@ -1,0 +1,249 @@
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm);
+}
+
+.sectionDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-md);
+}
+
+.goalList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.goalIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.saveBtn {
+  align-self: flex-start;
+}
+
+.loadingHint {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  padding: var(--space-lg);
+}
+
+.insightList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.insightCard {
+  border-left: 3px solid var(--color-primary);
+}
+
+.insightHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.insightTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.insightTypeBadge {
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.type_focus_pattern {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.type_time_allocation {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.type_fragmented {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.type_milestone {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8b5cf6;
+}
+
+.insightDesc {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-sm);
+}
+
+.insightDetail {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-sm);
+}
+
+.insightActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.chartCard {
+  min-height: 200px;
+}
+
+.chartTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.barChart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 140px;
+  padding: 0 var(--space-xs);
+}
+
+.barItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.barTrack {
+  width: 24px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.bar {
+  width: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  min-height: 2px;
+}
+
+.barLabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.barValue {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+}
+
+.pieChart {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.pieLegend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 12px;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  flex: 1;
+  color: var(--color-text-primary);
+}
+
+.legendValue {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.emptyChart {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  padding: var(--space-xl);
+  font-size: 12px;
+}
+
+.tokenDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin: var(--space-md) 0;
+}
+
+.tokenValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.tokenUnit {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.tokenHint {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}

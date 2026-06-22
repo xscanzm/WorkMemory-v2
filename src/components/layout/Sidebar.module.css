@@ -1,0 +1,127 @@
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md) var(--space-sm);
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-input);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+  cursor: pointer;
+}
+
+.navLink:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary-soft);
+  border-radius: var(--radius-input);
+  z-index: 0;
+}
+
+.navIcon,
+.navLabel,
+.navBadge {
+  position: relative;
+  z-index: 1;
+}
+
+.navIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navLink:hover .navIcon {
+  color: var(--color-text-secondary);
+}
+
+.navIconActive {
+  color: var(--color-primary) !important;
+}
+
+.navLabel {
+  flex: 1;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navLabelActive {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.navBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.footer {
+  padding: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-sm);
+}

@@ -25,7 +25,7 @@ use tauri::Manager;
 /// 应用共享状态
 pub struct AppState {
     pub db: Arc<parking_lot::Mutex<db::DbState>>,
-    pub capture: Arc<parking_lot::Mutex<capture::CaptureState>>,
+    pub capture: Arc<capture::CaptureState>,
     pub settings: Arc<parking_lot::Mutex<settings::AppSettings>>,
 }
 
@@ -43,15 +43,22 @@ pub fn run() {
         .plugin(tauri_plugin_store::Builder::default().build())
         .setup(|app| {
             // 初始化数据库
-            let db_state = db::init_db(app)?;
+            let db_dir = settings::get_app_data_dir(app.handle());
+            let db_path = db_dir.join("workmemory.db");
+            let db_state = db::DbState::new(&db_path).map_err(|e| {
+                Box::<dyn std::error::Error>::from(e)
+            })?;
             let db = Arc::new(parking_lot::Mutex::new(db_state));
 
             // 初始化采集状态
             let capture_state = capture::CaptureState::new();
-            let capture = Arc::new(parking_lot::Mutex::new(capture_state));
+            let capture = Arc::new(capture_state);
 
             // 加载设置
-            let app_settings = settings::load_settings(app)?;
+            let app_handle = app.handle().clone();
+            let app_settings = settings::load_settings(&app_handle).map_err(|e| {
+                Box::<dyn std::error::Error>::from(e)
+            })?;
             let settings = Arc::new(parking_lot::Mutex::new(app_settings));
 
             let state = AppState {
